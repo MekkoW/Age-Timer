@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+}
