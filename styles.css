@@ -5,16 +5,16 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #121212; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #121212;
+    color: #fff;
 }
 
 .timer-container {
     text-align: center;
-    background-color: #1f1f1f; /* Darker container background color */
+    background-color: #1f1f1f;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Light box shadow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 label {
@@ -26,9 +26,9 @@ label {
 #birthday {
     padding: 8px;
     font-size: 16px;
-    background-color: #2b2b2b; /* Darker input background color */
-    color: #fff; /* Light text color */
-    border: 1px solid #555; /* Border color */
+    background-color: #2b2b2b;
+    color: #fff;
+    border: 1px solid #555;
 }
 
 button {
@@ -57,5 +57,5 @@ button:hover {
 
 #age-display small {
     font-size: 18px;
-    color: #aaa; /* Lighter text color */
+    color: #aaa;
 }
