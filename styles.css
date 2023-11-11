@@ -1,15 +1,57 @@
 body {
+    font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-color: #f2f2f2;
 }
 
 .timer-container {
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#age-timer {
-    font-size: 2em;
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#birthday {
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#age-display {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#age-display span {
+    font-size: 36px;
+}
+
+#age-display small {
+    font-size: 18px;
+    color: #555;
 }
