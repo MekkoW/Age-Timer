@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateAgeTimer() {
         const currentTime = new Date();
         const ageInSeconds = (currentTime - birthday) / 1000;
-        const ageInMilliseconds = ageInSeconds * 100;
+        const age = Math.floor(ageInSeconds); // Extract the whole number part
+        const decimals = (ageInSeconds % 1).toFixed(8).substring(2); // Extract the decimal part
 
-        // Update the timer with 1/10 millisecond precision
-        document.getElementById("age-timer").textContent = ageInMilliseconds.toFixed(8);
+        // Update the timer display
+        document.getElementById("age-display").innerHTML = `Current Age: <span>${age}</span>.<small>${decimals}</small>`;
     }
 
     function startTimer() {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         birthday = new Date(selectedDate);
         updateAgeTimer(); // Initial update
         timerInterval = setInterval(updateAgeTimer, 100);
-        document.getElementById("age-timer").textContent = "Timer started!";
+        document.getElementById("age-display").innerHTML = "Timer started!";
     }
 
     // Expose the startTimer function to the global scope
