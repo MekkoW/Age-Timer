@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateAgeTimer() {
         const currentTime = new Date();
         const ageInSeconds = (currentTime - birthday) / 1000;
-        const age = (ageInSeconds / 31536000).toFixed(0); // 1 year = 31536000 seconds
-        const decimals = (ageInSeconds % 31536000).toFixed(9).substring(1); // Remove the leading dot if any
+        const age = Math.floor(ageInSeconds / 31536000); // 1 year = 31536000 seconds
+        const decimals = (ageInSeconds % 31536000).toFixed(9).split('.')[1]; // Extract the decimal part
 
         // Update the timer display
-        document.getElementById("age-display").innerHTML = `Current Age: <span>${age}</span>${decimals !== '000000000' ? '.' + decimals : ''}`;
+        document.getElementById("age-display").innerHTML = `Current Age: <span>${age}</span>${decimals ? '.' + decimals : ''}`;
     }
 
     function startTimer() {
