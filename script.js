@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let birthday = new Date();
+    let timerInterval;
 
     function updateAgeTimer() {
         birthday = new Date(document.getElementById("birthday").value);
@@ -11,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("age-timer").textContent = ageInMilliseconds.toFixed(8);
     }
 
-    // Initial update
-    updateAgeTimer();
+    function startTimer() {
+        updateAgeTimer(); // Initial update
+        timerInterval = setInterval(updateAgeTimer, 100);
+        document.getElementById("age-timer").textContent = "Timer started!";
+    }
+
+    // Expose the startTimer function to the global scope
+    window.startTimer = startTimer;
 });
