@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let birthday = new Date();
+    let birthday;
     let timerInterval;
 
     function updateAgeTimer() {
-        birthday = new Date(document.getElementById("birthday").value);
         const currentTime = new Date();
         const ageInSeconds = (currentTime - birthday) / 1000;
         const ageInMilliseconds = ageInSeconds * 100;
@@ -13,6 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function startTimer() {
+        const selectedDate = document.getElementById("birthday").value;
+        if (!selectedDate) {
+            alert("Please select your birthday first.");
+            return;
+        }
+
+        birthday = new Date(selectedDate);
         updateAgeTimer(); // Initial update
         timerInterval = setInterval(updateAgeTimer, 100);
         document.getElementById("age-timer").textContent = "Timer started!";
