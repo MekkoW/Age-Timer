@@ -1,11 +1,14 @@
+function calculateAge() {
 function startTimer() {
   const birthdateInput = document.getElementById('birthdate');
   const resultDiv = document.getElementById('result');
   const calculatorDiv = document.getElementById('ageCalculator');
-
+// Store birthdate in local storage for access in the timer page.
+  localStorage.setItem('birthdate', birthdateInput.value);
   const birthdate = new Date(birthdateInput.value);
   const currentDate = new Date();
-
+ // Redirect to the timer page.
+  window.location.href = 'timer.html';
   calculatorDiv.style.display = 'none'; // Hide the calculator section
 
   function updateAge() {
