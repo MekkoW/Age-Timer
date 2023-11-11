@@ -3,78 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Age Timer</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #282c35;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .timer-container {
-      text-align: center;
-    }
-
-    label {
-      margin-right: 10px;
-    }
-
-    input {
-      margin-right: 10px;
-    }
-
-    button {
-      background-color: #61dafb;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-
-    #age-display {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <title>Age Calculator</title>
 </head>
 <body>
-
-<div class="timer-container">
-  <label for="birthday">Select your birthday:</label>
-  <input type="date" id="birthday" />
-  <button onclick="startTimer()">Start Timer</button>
-  <p id="age-display">Waiting for timer to start...</p>
-</div>
-
-<script>
-  function updateAgeTimer() {
-    const currentTime = new Date();
-    const ageInSeconds = (currentTime - birthday) / 1000;
-    const age = Math.floor(ageInSeconds / 31536000); // 1 year = 31536000 seconds
-    const decimalPart = (ageInSeconds % 1).toFixed(9).substring(2).replace(/0+$/, ''); // Extract and format the decimal part
-
-    // Update the timer display
-    document.getElementById("age-display").innerHTML = `Current Age: <span>${age}.${decimalPart}</span>`;
-  }
-
-  function startTimer() {
-    const selectedDate = document.getElementById("birthday").value;
-    if (!selectedDate) {
-      alert("Please select your birthday first.");
-      return;
-    }
-
-    birthday = new Date(selectedDate);
-    updateAgeTimer(); // Initial update
-    timerInterval = setInterval(updateAgeTimer, 100);
-    document.getElementById("age-display").innerHTML = "Timer started!";
-  }
-</script>
-
+  <div class="container">
+    <label for="birthdate">Enter your birthdate (MM/DD/YYYY): </label>
+    <input type="text" id="birthdate" placeholder="MM/DD/YYYY">
+    <button onclick="calculateAge()">Start</button>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
