@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentTime = new Date();
         const ageInSeconds = (currentTime - birthday) / 1000;
         const age = Math.floor(ageInSeconds / 31536000); // 1 year = 31536000 seconds
-        const decimals = ('000000000' + (ageInSeconds % 31536000).toFixed(9)).slice(-9); // Extract and format the decimal part
+        const decimalPart = ('000000000' + (ageInSeconds % 31536000).toFixed(9)).slice(-9).replace(/\.?0+$/, ''); // Extract and format the decimal part
 
         // Update the timer display
-        document.getElementById("age-display").innerHTML = `Current Age: <span>${age}</span>.${decimals}`;
+        document.getElementById("age-display").innerHTML = `Current Age: <span>${age}.${decimalPart}</span>`;
     }
 
     function startTimer() {
