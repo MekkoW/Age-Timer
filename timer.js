@@ -1,10 +1,10 @@
 function displayTimer() {
   const resultDiv = document.getElementById('result');
 
-  const birthdate = new Date(localStorage.getItem('birthdate'));
-  const currentDate = new Date();
+  function updateAge() {
+    const birthdate = new Date(localStorage.getItem('birthdate'));
+    const currentDate = new Date();
 
-  setInterval(() => {
     const ageInMilliseconds = currentDate - birthdate;
     const ageInSeconds = ageInMilliseconds / 1000;
     const ageInMinutes = ageInSeconds / 60;
@@ -14,7 +14,13 @@ function displayTimer() {
 
     const formattedAge = new Intl.NumberFormat('en-US', { maximumFractionDigits: 9 }).format(ageInYears);
     resultDiv.innerHTML = `Your age is approximately ${formattedAge} years.`;
-  }, 1000);
+  }
+
+  // Call the updateAge function immediately to display the initial age.
+  updateAge();
+
+  // Set up an interval to update the age every second.
+  setInterval(updateAge, 1000);
 }
 
 function goBack() {
