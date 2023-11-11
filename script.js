@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentTime = new Date();
     const ageInSeconds = (currentTime - birthday) / 1000;
     const age = Math.floor(ageInSeconds / 31536000); // 1 year = 31536000 seconds
-    const decimalPart = formatDecimalPart(ageInSeconds % 1);
+    const decimalPart = formatDecimalPart(ageInSeconds % 31536000);
 
     // Update the timer display
     document.getElementById("age-display").innerHTML = `Current Age: <span>${age}.${decimalPart}</span>`;
