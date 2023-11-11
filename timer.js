@@ -19,8 +19,8 @@ function displayTimer() {
   // Call the updateAge function immediately to display the initial age.
   updateAge();
 
-  // Set up an interval to update the age every 100 milliseconds.
-  setInterval(updateAge, 100);
+  // Set up an interval to update the age every 10 milliseconds.
+  setInterval(updateAge, 10);
 }
 
 function goBack() {
